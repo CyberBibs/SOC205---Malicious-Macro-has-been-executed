@@ -76,7 +76,7 @@ Since I have detected that the device is compromised, I proceeded to isolated th
   <img src="images/10.png" alt="Taking Ownership">
 </p>
 
-#Note I would have Isolated the device from the network and performed further investigatio and remediation. For this task, since I could not find the endpoint, I assume I have successfully isolated the machine and continue with the next step.
+#Note I would have Isolated the device from the network and performed further investigation and remediation. For this task, since I could not find the endpoint, I assume I have successfully isolated the machine, escalating to Tier 2 and continue with the next step.
 
 ## Step 6: Remediation
 Remediation is a fundamental component of a robust cybersecurity strategy. It involves fixing vulnerabilities and addressing security issues to prevent exploitation, protect data, maintain operations, and comply with regulations, ultimately contributing to a more secure and resilient organization. To remediate and prevent furture re occurence, the following steps should be taken;
@@ -84,9 +84,12 @@ Remediation is a fundamental component of a robust cybersecurity strategy. It in
  - Configure/write firewall rules to deny/block traffic from the malicious IP address 92.204.221.16.
 
 ## Step 7: Report Artifacts & IOCs
-After completing the analysis, I documented my findings in the “Analyst Note” section.
+After completing the analysis, I documented my findings in the “Analyst Note” section, repoterd Artifacts & IOCs.
 <p align="center">
-  <img src="images/15.png" alt="Taking Ownership">
+  <img src="images/12.png" alt="Taking Ownership">
+</p>
+<p align="center">
+  <img src="images/11.png" alt="Taking Ownership">
 </p>
 
 ## Step : Closing the Alert
