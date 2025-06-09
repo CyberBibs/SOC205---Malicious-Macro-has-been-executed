@@ -20,7 +20,7 @@ These steps are expalined in details below with images.
 ## Step 1: Checking SOC Ticket Queue
 The Security Operations Center (SOC) ticket queue is a critical component in managing and responding to cybersecurity incidents. The reasons are Incident Tracking and Management, Prioritization and Triage, Accountability, Reporting, Trend Analysis, and Compliance and Audit Readiness.
 
-Each ticket in the queue is typically assigned to a specific analyst or team, ensuring clear responsibility and accountability for incident resolution. This fosters a structured and organized approach to incident management. I took ownership of the Alert with EventID: 263
+Each ticket in the queue is typically assigned to a specific analyst or team, ensuring clear responsibility and accountability for incident resolution. This fosters a structured and organized approach to incident management. I took ownership of the Alert with EventID: 231
  <p align="center">
   <img src="images/1.png" alt="SOC Main Page">
 </p>
@@ -35,7 +35,7 @@ Upon taking ownership of the alert, it is automatically sent to the investigatio
 </p>
 
 ## Step 3: Detection
-Based on the information that the alert provided, it appears that there is a suspicious Web Attack detected on a server named “CP-Spark-Gateway-01” with an IP address of 172.16.20.146. The Alert is triggered by the SOC287 rule for Arbitrary File Read on Checkpoint Security Gateway [CVE-2024–24919] and device action was allowed.
+Based on the information that the alert provided, it appears that the host "Jayne" with IP address "172.16.17.198" downloaded a malicious file with filename "edit1-invoice.docm" and file hash "1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0a" to the path "C:\Users\LetsDefend\Downloads\edit1-invoice.docm". The Alert is triggered by the SOC205 - Malicious Macro has been executed and was detected by AV/EDR solution.
 <p align="center">
   <img src="images/4.png" alt="Taking Ownership">
 </p>
