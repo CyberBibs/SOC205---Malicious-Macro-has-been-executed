@@ -54,11 +54,13 @@ Next, I also used virustotal to gather more information as regards the behaviour
 </p>
  
 ## Step 4: Analysis
-I started my analysis by investigating the access logs. Focusing on IP addresses, user-agents, paths, HTTP status codes, and timestamps to help me identify any suspicious or malicious activity.
-
-Before examining the HTTP traffic, I investigated the payloads used in exploiting the relevant vulnerability. I found this publicly available POC (Proof of Concept) used by [CVE-2024–24919] in this github repository https://github.com/seed1337/CVE-2024-24919-POC/blob/main/exploit.py 
+I started my analysis by searching our log files with the C2 IP address 92.204.221.16 to see how many endpoint(s) have had any form of contact with it. The result of my search shows that only one end point with IP address 172.16.17.198 has communicated with the C2 center. 
 <p align="center">
   <img src="images/8.png" alt="Taking Ownership">
+</p>
+Next, I opened the raw log and noticed a powershell was opened and and a process was started that tried to download an executable file Request: MESSBOX.EXE from the URL HTTP://WWW.GREYHATHACKER.NET/TOOLS/ MESSBOX.EXE. However, it seems the downloade failed because the HTTP code: 404 — File Not Found (resource not currently available on the server) was returned. However, I will took no chance and continued my investigation by analysing the affected endpoint.
+<p align="center">
+  <img src="images/9.png" alt="Taking Ownership">
 </p>
 
 Next, I proceeded to the log management page and filtered by log by the malicious source IP address 203.160.68.12 to see how many host have been in contact with it. Upon searching the network, I discovered only the host named “CP-Spark-Gateway-01” with an IP address of 172.16.20.146 has been in contact the the malicious IP.
@@ -66,37 +68,20 @@ Next, I proceeded to the log management page and filtered by log by the maliciou
   <img src="images/9.png" alt="Taking Ownership">
 </p>
 
-The Log information below, shows that the malicious IP address 172.16.20.146 used the POST method to send the malicious payload aCSHELL/../../../../../../../../../../etc/shadow — which attempts to read the sensitive /etc/shadow file via directory traversal on the host “CP-Spark-Gateway-01” with an IP address of 172.16.20.146 on 06/June/2024.
-<p align="center">
-  <img src="images/10.png" alt="Taking Ownership">
-</p>
-<p align="center">
-  <img src="images/11.png" alt="Taking Ownership">
-</p>
-
-The /etc/shadow file is a critical file in Unix/Linux based operating systems that stores hashed passwords and account expiration details for user accounts. Hence, I can conclude that the attcker is trying to steal user credentials and that the request was granted with 200 status code as noticed in the log above.
-
-This further proves that the attck is malicious.
-<p align="center">
-  <img src="images/12.png" alt="Taking Ownership">
-</p>
-
 ## Step 5: Containment
 Containment plays a pivotal role in cybersecurity by limiting the impact of security incidents, protecting data and operations, facilitating effective incident response, preserving evidence for forensic analysis, and ensuring compliance with legal and regulatory requirements.
 
-Since I have detected that the device is compromised, I proceeded to isolated the device "CP-Spark-Gateway-01” with an IP address of 172.16.20.146 to prevent further damages. 
+Since I have detected that the device is compromised, I proceeded to isolated the endpoint with an IP address of 172.16.17.198 to prevent further damages. However, I could not find the device in the endpoint section. 
 <p align="center">
-  <img src="images/13.png" alt="Taking Ownership">
+  <img src="images/10.png" alt="Taking Ownership">
 </p>
-<p align="center">
-  <img src="images/14.png" alt="Taking Ownership">
-</p>
+
+#Note I would have Isolated the device from the network and performed further investigatio and remediation. For this task, since I could not find the endpoint, I assume I have successfully isolated the machine and continue with the next step.
 
 ## Step 6: Remediation
 Remediation is a fundamental component of a robust cybersecurity strategy. It involves fixing vulnerabilities and addressing security issues to prevent exploitation, protect data, maintain operations, and comply with regulations, ultimately contributing to a more secure and resilient organization. To remediate and prevent furture re occurence, the following steps should be taken;
- - Apply security patches or updates to address the CVE-2024–24919 vulnerability on our server “CP-Spark-Gateway-01” to eliminate the attack vector.
- - Configure/write firewall rules to deny/block traffic from the malicious IP address 203.160.68.12
- - If a Security Gateway / Cluster is configured to use an LDAP Account Unit, I recommend changing the password of the LDAP account.
+ - Isolate the endpoint with IP address 172.16.17.198 for further investigation. 
+ - Configure/write firewall rules to deny/block traffic from the malicious IP address 92.204.221.16.
 
 ## Step 7: Report Artifacts & IOCs
 After completing the analysis, I documented my findings in the “Analyst Note” section.
