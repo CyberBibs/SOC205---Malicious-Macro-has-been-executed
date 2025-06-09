@@ -40,7 +40,7 @@ Based on the information that the alert provided, it appears that the host "Jayn
   <img src="images/4.png" alt="Taking Ownership">
 </p>
 
-To better understand this alert, I carried out some Open-Source Intelligence (OSINT) as regards the reported CVE-2024–24919 and important information relating to the CVE.
+To gather Information as regards the file ""edit1-invoice.docm" and file hash "1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0a", I used Ciscotalos and Virustotal to gather information as regards the nature of the downloaded Macro using the file hash.
 <p align="center">
   <img src="images/5.png" alt="Taking Ownership">
 </p>
