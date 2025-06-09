@@ -1,7 +1,7 @@
 # SOC205---Malicious-Macro-has-been-executed
 
 # Introduction
-CVE-2024-24919 is a critical zero-day vulnerability in Check Point Security Gateways that allows unauthenticated remote attackers to read arbitrary files from affected systems. Discovered in May 2024 and actively exploited in the wild, the flaw targets devices with Remote Access VPN or Mobile Access Blade enabled. Attackers can leverage this vulnerability to access sensitive files such as password hashes and SSH keys, potentially leading to full system compromise. Due to its severity and exploitation status, immediate patching and mitigation are strongly advised.
+A malicious macro refers to a macro script embedded within a document (usually Microsoft Office files like .doc, .docm, .xls, or .xlsm) that performs harmful actions when the document is opened and macros are enabled.
 
 ## Investigation & Remediation
 To investigate and remediate the alert, I took the following steps;
