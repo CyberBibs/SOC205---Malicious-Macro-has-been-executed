@@ -95,7 +95,7 @@ After completing the analysis, I documented my findings in the â€œAnalyst Noteâ€
 ## Step : Closing the Alert
 After concluding my investigation, I concluded that the alert is a true positive. I drafted a closing note explaining the cause of the alert, the steps i took to analyse the alert, the outcome of the analyses, step taken to remediate the alert and successfully close the alert. 
 <p align="center">
-  <img src="images/16.png" alt="Taking Ownership">
+  <img src="images/13.png" alt="Taking Ownership">
 </p>
 
 
