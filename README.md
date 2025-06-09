@@ -45,18 +45,14 @@ To gather Information as regards the file ""edit1-invoice.docm" and file hash "1
   <img src="images/5.png" alt="Taking Ownership">
 </p>
 
-Next, I carried out threat intelligence using the threat Intelligence platform provided by LetsDefend which provides a comprehensive database dedicated to cataloging maliciously used information, such as IP addresses, domains, and other indicators of compromise using the source IP address of 203.160.68.12. 
+Next, I also used virustotal to gather more information as regards the behaviour of the micro, From the information gathered in virustotal, I discovered the file was malicious in nature and likely in contact with a C2 IP: 92.204.221.16 . 
 <p align="center">
   <img src="images/6.png" alt="Taking Ownership">
 </p>
-
-Additionally, I used VirusTotal for threat intelligence on the same IP address and observed that the malware was flaged for malicious activities by 4 security vendors and the Geolocation of the IP is Hong Kong. 
 <p align="center">
   <img src="images/7.png" alt="Taking Ownership">
 </p>
-
-This confirms that the traffic from the IP 203.160.68.12 is Malicious. Hence, the need for me to carry out further investigation by analyzing the logs to see how many hosts in my network have ahd any communication with this malicious IP. 
-
+ 
 ## Step 4: Analysis
 I started my analysis by investigating the access logs. Focusing on IP addresses, user-agents, paths, HTTP status codes, and timestamps to help me identify any suspicious or malicious activity.
 
